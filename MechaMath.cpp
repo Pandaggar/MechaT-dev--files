@@ -148,7 +148,6 @@ int Eular::AngleXY(double x, double y){
     double BX = O.QuadXY(x,y);
     double B = 0;
 
-  
     if (BX == 1){
         B = abs(45-(O.ABVS(x,y,1,-1)));
     }  
@@ -203,5 +202,23 @@ int Eular::AngleXY(double x, double y){
     return B;
 }
 
+
+void Eular::EULtoQUAT(x,y,z){//z->y->x
+
+c1 = Math.cos( x / 2 )
+c2 = Math.cos( y / 2 )
+c3 = Math.cos( z / 2 )
+
+s1 = Math.sin( x / 2 )
+s2 = Math.sin( y / 2 )
+s3 = Math.sin( z / 2 )
+
+quaternion = [
+              c1 * c2 * c3 - s1 * s2 * s3,
+              s1 * c2 * c3 + c1 * s2 * s3,
+              c1 * s2 * c3 - s1 * c2 * s3,
+              c1 * c2 * s3 + s1 * s2 * c3,
+             ]
+}
 
 //quat + imu
