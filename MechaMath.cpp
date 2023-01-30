@@ -203,7 +203,7 @@ int Eular::AngleXY(double x, double y){
 }
 
 
-void Eular::EULtoQUAT(x,y,z){//z->y->x
+void Eular::EULtoQUAT(double x,double y,double z){//z->y->x
 
 c1 = Math.cos( x / 2 )
 c2 = Math.cos( y / 2 )
