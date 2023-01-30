@@ -1,5 +1,5 @@
 #include "NEROT.h"
-
+#include <iostream>
 
 int Eular::ABV(double x, double y, double z, double w) {
     double B = ((180/3.14159265359)*(acos(((x*y)+(z*w))/((sqrt((x*x)+(y*y)))*(sqrt((z*z)+(w*w)))))));
