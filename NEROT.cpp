@@ -3,7 +3,7 @@
 
 int Eular::ABV(double x, double y, double z, double w) {
     double B = ((180/3.14159265359)*(acos(((x*y)+(z*w))/((sqrt((x*x)+(y*y)))*(sqrt((z*z)+(w*w)))))));
-    // std::cout << B;
+     std::cout << B;
     return B;
 }
 
@@ -75,7 +75,7 @@ int Eular::QuadXY(double x, double y)
         }
     }
     return B;
-    //std::cout << B;
+    std::cout << B;
 }
 
 int Eular::ABVS(double x,double y,double z,double w){
@@ -91,36 +91,6 @@ int Eular::ABVS(double x,double y,double z,double w){
         B= 0;
     }
     return B;
-}
-
-void Eular::BaseXY(double x,double y,int * c,int * d){
-    double Q = QuadXY(x,y);
-    double BX = 0;
-    double BY = 0; 
-    if(Q == 1){
-        BX = 0;
-        BY = 1;  
-    } 
-    else if(Q == 2){
-        BX = 1;
-        BY = 0; 
-    }
-    else if(Q == 3){
-        BX = 0;
-        BY = -1; 
-    }
-    else if(Q == 4){
-        BX = -1;
-        BY = 0; 
-    }
-    else{
-        BX = 0;
-        BY = 0; 
-    }
-    // std::cout << BX;
-    // std::cout << BY;
-    *c = BX;
-    *d = BY;
 }
 
 int Eular::AngleXY(double x, double y){
@@ -183,15 +153,17 @@ int Eular::AngleXY(double x, double y){
     return B;
 }
 
-//int main(){
-//    double vx1 = 1.6792;
-//    double vy1 = 1;
-//    double vz1 = 1;
-//
-//    double vx2 = sqrt(((vx1*vx1)+(vy1*vy1)));
-//    double vy2 = vz1;
-//    std::cout << AngleB(vx1,vy1);
-//    std::cout << AngleB(vx2,vy2);
-//    return 0;
-//}
+int main(){
+    Eular obj;
+    double vx1 = 5;
+    double vy1 = 0;
+    double vz1 = -1;
+
+    double vx2 = sqrt(((vx1*vx1)+(vy1*vy1)));
+    double vy2 = vz1;
+    std::cout << obj.AngleXY(vx1,vy1);
+    printf(",");
+    std::cout << obj.AngleXY(vx2,vy2);
+    return 0;
+}
 
